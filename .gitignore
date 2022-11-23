@@ -1,3 +1,5 @@
+.idea/
+.vs/
 **/log.log
 logs/
 zip/
