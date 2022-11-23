@@ -1,4 +1,5 @@
 #!/bin/bash
+# Backup logs file and archive to zip dir
 
 dir=$(cd `dirname $0`; pwd)
 day=`date +%Y%m%d_%H%M%S`
@@ -14,3 +15,5 @@ rm -f $dir/../logs/*
 
 # archive
 zip -r -q -o dst_$day.zip ~/.klei/DoNotStarveTogether/MyDediServer
+
+echo -e "Backup is complete." >> log.log
