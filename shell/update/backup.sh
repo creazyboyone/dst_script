@@ -16,4 +16,4 @@ rm -f $dir/../logs/*
 # archive
 zip -r -q -o dst_$day.zip ~/.klei/DoNotStarveTogether/MyDediServer
 
-echo "Backup is complete." >> ../log.log
+echo "Backup is complete." >> $dir/../log.log

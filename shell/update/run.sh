@@ -10,10 +10,10 @@ currentHour=$(date +%H)
 if [ $currentHour -eq 04 ]
 then
 	# 4 Hours
-	echo "Now is $currentHour o'clock" >> log.log
+	echo "Now is $currentHour o'clock" >> $dir/../log.log
 	# get logs
 	cat $dir/../logs/master.log | grep "Announcement" | awk '/Leave|Join/' > $tmpdir
-	echo "Finish Getting Logs." >> log.log
+	echo "Finish Getting Logs." >> $dir/../log.log
 
 	a=`cat $tmpdir | wc -l`
 	b=`expr $a % 2`
@@ -30,6 +30,6 @@ then
 		cat $tmpdir | awk -F] '{print $3}' | tr -d " " > $dir/over1
 	fi
 else
-	echo "Not 4 Hours, Skip!" >> log.log
+	echo "Not 4 Hours, Skip!" >> $dir/../log.log
 fi
 
