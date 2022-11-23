@@ -25,6 +25,6 @@ echo "4. start" >> log.log
 sh $dir/backup.sh
 
 cd ~/dst/bin
-mkdir $dir/../logs
+mkdir -p $dir/../logs
 ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master > $dir/../logs/master.log &
 ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Caves > $dir/../logs/caves.log &
