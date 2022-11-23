@@ -21,7 +21,8 @@ sed -r 's/.*"(.+)".*/\1/' | cut -b 10-100 | sed -r 's/^/&ServerModSetup("/g' | s
 sleep 2s
 
 echo "4. start" >> log.log
-rm -f $dir/../logs/*
+# backup logs and archive
+sh $dir/backup.sh
 
 cd ~/dst/bin
 ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master > $dir/../logs/master.log &
