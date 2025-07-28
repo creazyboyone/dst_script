@@ -11,8 +11,7 @@ cd ~/steamcmd
 ./steamcmd.sh +force_install_dir ~/dst +login anonymous +app_update 343050 validate +quit
 
 echo "3. mod" >> $dir/../log.log
-cat /root/.klei/DoNotStarveTogether/MyDediServer/Master/modoverrides.lua | grep workshop |\
-sed -r 's/.*"(.+)".*/\1/' | cut -b 10-100 | sed -r 's/^/&ServerModSetup("/g' | sed -r 's/$/&")/g'\ >> /root/dst/mods/dedicated_server_mods_setup.lua
+cat /root/.klei/DoNotStarveTogether/MyDediServer/Master/modoverrides.lua | grep workshop | sed -r 's/.*"(workshop-[0-9]+)".*/\1/' | cut -b 10-100 | sed -r 's/^/&ServerModSetup("/g' | sed -r 's/$/&")/g'\ >> /root/dst/mods/dedicated_server_mods_setup.lua
 sleep 2s
 
 echo "4. start" >> $dir/../log.log
