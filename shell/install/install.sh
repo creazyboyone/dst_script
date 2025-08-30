@@ -1,9 +1,9 @@
 #!/bin/bash
 # Install Steam and DST
-
+add-apt-repository multiverse
 dpkg --add-architecture i386
 sudo apt update
-sudo apt-get install zip unzip lib32gcc1 screen libsdl2-2.0-0:i386 libcurl4-gnutls-dev:i386
+sudo apt-get install zip unzip lib32gcc1 screen libsdl2-2.0-0:i386 libcurl4-gnutls-dev:i386 libc6:i386 libstdc++6:i386
 mkdir ~/steamcmd
 cd ~/steamcmd
 wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
